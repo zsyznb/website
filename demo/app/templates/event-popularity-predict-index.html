@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>事件流行度预测</title>
+    {% from 'macros.html' import head %}
+    {{head()}}
+    <style type="text/css">
+#event-trace-index-table {
+    word-wrap:break-word;
+    word-break: break-all;
+    border-collapse:collapse;
+
+}
+#bs{
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #fff;
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 4px 4px 0 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding:  15px 15px;
+    margin: 0 -15px 15px;
+    border-style: solid;
+}
+table.dataTable thead .sorting {
+    background-image: url("/static/images/sort_both.png"); }
+  table.dataTable thead .sorting_asc {
+    background-image: url("/static/images/sort_asc.png"); }
+  table.dataTable thead .sorting_desc {
+    background-image: url("/static/images/sort_desc.png"); }
+  table.dataTable thead .sorting_asc_disabled {
+    background-image: url("/static/images/sort_asc_disabled.png"); }
+  table.dataTable thead .sorting_desc_disabled {
+    background-image: url("/static/images/sort_desc_disabled.png"); }
+</style>
+</head>
+
+<body>
+    <!--导航-->
+    {% from 'macros.html' import nav %}
+    {{nav()}}
+    <div class="container">
+        <div class="page-header">
+            <h2>可预测流行度事件列表</h2>
+        </div>
+        <div class="row">
+            <div id="bs">
+            <table id="event-trace-index-table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th width="9%">事件编码</th>
+                        <th width="40%">事件</th>
+                        <th>事件信息流行度预测详情</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in events %}
+                    <tr>
+                        <td>{{event.id}}</td>
+                        <td>{{event.name}}</td>
+                        <td><a class="btn btn-default" href="/event-popularity-predict-detail/{{event.id}}"><span class="glyphicon glyphicon-chevron-right"></span></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+          </div>
+        </div>
+       <!--  <nav style="text-align: center">
+            <ul class="pagination">
+                <li><a href="#">«</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+        </nav> -->
+        <hr>
+        <footer class="jumbotron-footer">
+            <p>&copy; 贝壳</p>
+        </footer>
+    </div>
+    <!-- /container -->
+    <!-- /container -->
+    {% from 'macros.html' import endjs %} {{endjs()}}
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#event-trace-index-table').DataTable();
+    });
+    </script>
+</body>
+
+</html>
