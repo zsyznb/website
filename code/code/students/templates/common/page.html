@@ -1,0 +1,24 @@
+<nav aria-label="Page navigation" style="margin-left: 15px;margin-top:-15px;">
+    <ul class="pagination">
+        <li
+        {% if page == 1 or page == '1' %}
+        class="disabled"
+        {% endif %}
+        >
+            <a 
+            {% if page == '1' or page == 1 %}
+            href="#" 
+            {% else %}
+            href="/{{adr}}/?page={{ page|add:-1 }}" 
+            {% endif %}
+            aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li>
+            <a href="/{{adr}}/?page={{ page|add:1 }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

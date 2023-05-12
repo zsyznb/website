@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+{% include 'common/head.html' %}
+<body>
+    <style>
+        .err_div {
+            box-shadow: 10px 10px 5px #888888;
+        }
+    </style>
+    <center>
+        <div style="margin-top: 270px;width: 400px;background-color: #ffffff;height: 250px;border-radius:25px;-moz-border-radius:25px;"
+            class="err_div">
+            <br />
+            <hr />
+            <h4><b>{{ message }}</b></h4>
+            <hr />
+            <p>即将跳转到<span>{{ adrUrl }}</span></p>
+            <a class="btn btn-danger" href="#" role="button" id="btn" onclick="go()">3s</a>
+            <hr />
+            <br />
+        </div>
+    </center>
+</body>
+<script>
+    function go() {
+
+        window.location.href = '{{ goUrl }}';
+    }
+
+    $(function () {
+        var btn = document.getElementById('btn')
+        var a = true;
+        var len = {{ goTime }};
+            btn.innerHTML = len + 's';
+            var time = setInterval(function () {
+                btn.innerHTML = parseFloat(btn.innerHTML) - 1 + 's'
+                if (btn.innerHTML == '0s') {
+
+                    window.location.href = '{{ goUrl }}';
+                }
+            }, 1000);
+            a = false;
+        }); 
+</script>
+
+</html>

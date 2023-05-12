@@ -1,0 +1,38 @@
+{% load static %}
+<style>
+    .left_div {
+        width: 210px;
+        text-align: center;
+        float: left;
+        height: calc( 100% - 5px );
+        background-color: aliceblue;
+    }
+
+    .left_li {
+        cursor: pointer;
+    }
+
+    .left_li:hover {
+        cursor: pointer;
+        color: blue;
+    }
+</style>
+<div class="left_div">
+    <ul class="list-group" style="height:100%;">
+        <li class="list-group-item left_li"><img src="{% static 'img/logo.png' %}" width="30px"><b
+                style="font-size: 13px;">{{ webtitle }}</b></li>
+        {% for vo in left_list %}
+        <a href="{{ vo.path }}">
+            <li class="
+            list-group-item left_li
+            {%if vo.adr == adr %}
+            active
+            {%endif%}
+            ">{{ vo.name }}</li>
+        </a>
+        {% endfor %}
+        <a href="/logout/">
+            <li class="list-group-item left_li" style="color:red;">注销退出系统</li>
+        </a>
+    </ul>
+</div>

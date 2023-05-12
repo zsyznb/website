@@ -1,0 +1,23 @@
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="changecourse{{item.id}}" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改设备种类信息</h4>
+            </div>
+            <form method="post" action="/changecourse/?id={{item.id}}">
+                <div class="modal-body">
+                    <label>设备种类标识</label>
+                    <input type="text" class="form-control" name="title" value="{{item.title}}" readonly />
+                    <label>设备种类备注</label>
+                    <textarea class="form-control" name="content" rows="8">{{item.content}}</textarea>
+                    <br />
+                    <button class="btn btn-success" type="submit">修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

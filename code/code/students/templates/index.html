@@ -1,0 +1,47 @@
+<html>
+    {% include "common/head.html" %}
+<body>
+    {% include "common/left.html" %}
+    {% include "common/top.html" %}
+    <div class="main_div">
+        <div class="main_div_content">
+            <h3>
+                【<b style="color:green;">welcome to</b>】--
+                <small>
+                    {{ webtitle }}
+                </small>
+            </h3>
+            <hr />
+            <h4>系统标题：【{{ webtitle }}】</h4>
+            <hr />
+            <h5>系统开启日期：{{ add }}</h5>
+            <h5>系统简介：{{ content }}</h5>
+            <h5>系统code：{{ code }}</h5>
+            <h5>系统版权信息：{{ cp }}</h5>
+            <h5>当前日期：{{ localtime }}</h5>
+        </div>
+        <div style="padding:15px;">
+        <h5>当前天气：</h5>
+        <div>
+            <div id="he-plugin-standard"></div>
+            <script>
+                WIDGET = {
+                    "CONFIG": {
+                        "layout": "1",
+                        "width": "450",
+                        "height": "250",
+                        "background": "1",
+                        "dataColor": "FFFFFF",
+                        "key": "094dac0a1a054347880058fc7273310d"
+                    }
+                }
+            </script>
+            <script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+        </div>
+        </div>
+    </div>
+</body>
+<script>
+
+</script>
+</html>

@@ -1,0 +1,30 @@
+{% load static %}
+<nav class="navbar navbar-default navbar-fixed-top" style="width: calc(100% - 240px);margin-left:225px;">
+    <div class="container-fluid">
+        <ul class="nav nav-pills" style="margin-top: 13px;">
+            <li class="top-li">
+                【
+                <img alt="" src="{% static 'img/14.png' %}" width="20px;">
+                <b>{{webtitle}}</b>--{{code}}
+                】
+            </li>
+            <li class="top-li">|<aa style="margin-left: 5px;">设备选项:</aa>
+            </li>
+            {% if top_left != None  %}
+            {% for x in top_left %}
+            <li class="top-li" style="margin-top:-10px;">
+                <a href="/report/?id={{x.id}}">
+                <button class="btn-info btn btn-xs">{{x.title}}</button>
+                </a>
+            </li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+<style>
+    .top-li{
+        font-size:15px;
+        margin-left: 5px;
+    }
+</style>

@@ -1,0 +1,38 @@
+<html>
+{% include "common/head.html" %}
+
+<body>
+    {% include "common/left.html" %}
+    {% include "common/top.html" %}
+    <div class="main_div">
+        <div class="main_div_content">
+            <hr />
+            <h5>
+                <img src="/static/img/6.png" style="width:30px;" />
+                <b>网站系统设置</b>
+            </h5>
+            <hr />
+            <form action="/changesys/" method="post" style="width:550px;">
+                {% csrf_token %}
+                <label>系统名称</label>
+                <input type="text" class="form-control" name="name" value="{{ webtitle }}" />
+                <label>系统code</label>
+                <input type="text" class="form-control" name="code" value="{{ code }}" />
+                <label>系统简介</label>
+                <textarea class="form-control" name="content" rows="5">{{ content }}</textarea>
+                <label>系统版权信息</label>
+                <input type="text" class="form-control" name="cp" value="{{ cp }}" />
+                <label>系统运行时间</label>
+                <input type="text" class="form-control" name="add" value="{{ add }}" />
+                <hr />
+                <button class="btn btn-success" type="submit">修改</button>
+                <hr />
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    
+</script>
+
+</html>

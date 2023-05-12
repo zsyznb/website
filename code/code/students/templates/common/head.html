@@ -1,0 +1,149 @@
+<head>
+    {% load static %}
+    <title>{{ webtitle }}</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.png' %}" />
+
+    <!--jquery-->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!--bootstrap-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'js/excel.js' %}"></script>
+    <script src="{% static 'js/jquery.jqprint-0.3.js' %}"></script>
+
+    <!--echars-->
+    <script src="{% static 'js/echarts/dist/echarts.min.js' %}"></script>
+    <script src="{% static 'js/echarts/dist/extension/bmap.min.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/default.min.css' %}">
+    <script src="{% static 'js/highlight.min.js' %}"></script>
+
+</head>
+<style>
+    html {
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+        font-family: '微软雅黑';
+        background: url({% static 'img/bangoundcolor.jpg' %});
+        background-size: 100% 100%;
+        margin-top: 0px;
+    }
+
+    th,td{
+        font-size: 12px;
+    }
+
+    .main_div {
+        float: left;
+        width: calc(100% - 240px);
+        margin-left: 15px;
+        margin-right: 15px;
+        height: calc(100% - 60px);
+        margin-top: 57px;
+        background-color: aliceblue;
+        overflow: auto;
+    }
+
+    .main_div_content {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .main_div::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width: 6px;
+        /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+
+    .main_div::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: 10px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: #7a7878;
+    }
+
+    .main_div::-webkit-scrollbar-track {
+        /*滚动条里面轨道*/
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        background: #ededed;
+    }
+
+    .maxf::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width: 6px;
+        /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+
+    .maxf::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: 10px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: #7a7878;
+    }
+
+    .maxf::-webkit-scrollbar-track {
+        /*滚动条里面轨道*/
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        background: #ededed;
+    }
+
+    .td_mx {
+        /*省略号显示*/
+        word-wrap:break-word;word-break:break-all;
+    }
+
+    .mtable {
+        margin: 0 auto;
+        width: 850px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-family: "微软雅黑";
+        table-layout: fixed;
+    }
+
+    .mtable_td {
+        border-bottom: 10px solid #666666;
+        /*下面4行是实现超过td文字变省略号,另外还要给table加上table-layout:fixed;*/
+        text-overflow: ellipsis;
+        -moz-text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /*大型模态框*/
+    .big_dog_div {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .big_dog_conetnt {
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+        .amain{
+            text-align:left;
+            width:70%;
+        }
+        .fdibv{
+            padding:10px;
+            border-radius: 10px;
+            min-height:550px;
+        }
+</style>

@@ -1,0 +1,28 @@
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="ldsh{{item.id}}" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改设备信息</h4>
+            </div>
+            <form method="post" action="/changedetail/?id={{item.id}}">
+                <div class="modal-body">
+                    <input type="hidden" class="form-control" name="title" value="{{dtitle}}" />
+                    <label>设备ID</label>
+                    <input type="text" class="form-control" name="did"  value="{{item.did}}" />
+                    <label>生产厂家</label>
+                    <input type="text" class="form-control" name="company"  value="{{item.company}}" />
+                    <label>技术参数</label>
+                    <input type="text" class="form-control" name="paramter"  value="{{item.paramter}}" />
+                    <label>生产日期</label>
+                    <input type="datetime-local" class="form-control" name="add_time" value="{{item.add_time|date:'Y-m-d\TH:i:s'}}" />
+                    <br />
+                    <button class="btn btn-primary" type="submit">修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
